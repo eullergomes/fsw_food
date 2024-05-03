@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* custom classes custom classes for any element */
 :root {
   --background: 0 0% 96%;
   --foreground: 0 0% 20%;
@@ -25,6 +26,7 @@
   --radius: 0.75rem;
 }
 
+/* custom classes for ... */
 .dark {
   --background: 356 50% 10%;
   --foreground: 356 5% 100%;
