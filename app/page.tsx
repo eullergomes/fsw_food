@@ -6,10 +6,14 @@ export default function Home() {
   return (
     <div>
       <Header />
+
       <div className="px-5 py-6">
         <Search />
       </div>
-      <CategoryList />
+
+      <div className="px-5 py-6">
+        <CategoryList />
+      </div>
     </div>
   );
 }
