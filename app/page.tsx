@@ -5,8 +5,27 @@ import Search from "./_components/search";
 import ProductList from "./_components/product-list";
 import { Button } from "./_components/ui/button";
 import { ChevronRightIcon } from "lucide-react";
+import { db } from "./_lib/prisma";
 
-export default function Home() {
+const Home = async () => {
+  //products with a discount percentage greater than zero
+  const products = await db.product.findMany({
+    where: {
+      discountPercentage: {
+        gt: 0, //products with discount
+      },
+    },
+    take: 10, //limit 10 products
+    include: {
+      //include only restaurant name
+      restaurant: {
+        select: {
+          name: true,
+        },
+      },
+    },
+  });
+
   return (
     <div>
       <Header />
@@ -42,8 +61,10 @@ export default function Home() {
             <ChevronRightIcon size={16} />
           </Button>
         </div>
-        <ProductList />
+        <ProductList products={products} />
       </div>
     </div>
   );
-}
+};
+
+export default Home;
