@@ -15,7 +15,7 @@ export default function Home() {
         <Search />
       </div>
 
-      <div className="px-5 py-6">
+      <div className="py-6">
         <CategoryList />
       </div>
 

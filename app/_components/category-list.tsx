@@ -7,7 +7,7 @@ const CategoryList = async () => {
 
   //render an icon for each category
   return (
-    <div className="grid grid-cols-2 gap-3">
+    <div className="flex gap-4 overflow-x-scroll px-5 [&::-webkit-scrollbar]:hidden">
       {categories.map((category) => (
         <CategoryItem key={category.id} category={category} />
       ))}
