@@ -7,12 +7,13 @@ interface CategoryItemProps {
 
 const CategoryItem = ({ category }: CategoryItemProps) => {
   return (
-    <div className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-8 py-3 shadow-md">
+    <div className="flex min-w-fit items-center justify-center gap-3 rounded-full px-4 py-3 shadow-md">
       <Image
         src={category.imageUrl}
         alt={category.name}
         width={30}
         height={30}
+        quality={100}
         className="h-[30px]"
       />
 
