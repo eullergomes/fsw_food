@@ -11,7 +11,7 @@ const ProductList = async () => {
     },
     take: 10, //limit 10 products
     include: {
-      //include the restaurant name
+      //include only restaurant name
       restaurant: {
         select: {
           name: true,

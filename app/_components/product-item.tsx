@@ -5,6 +5,7 @@ import { Badge } from "./ui/badge";
 import { ArrowDownIcon } from "lucide-react";
 
 interface ProductItemProps {
+  /* Prisma.<TableName>GetPayload */
   product: Prisma.ProductGetPayload<{
     include: {
       restaurant: {

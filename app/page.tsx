@@ -25,7 +25,7 @@ export default function Home() {
           alt="Até 30% de desconto em pizzas"
           height={0}
           width={0}
-          className="object-cotain h-auto w-full"
+          className="h-auto w-full object-contain"
           sizes="100vw"
           quality={100}
         />
@@ -38,7 +38,7 @@ export default function Home() {
             variant="ghost"
             className="h-fit p-0 text-primary hover:bg-transparent"
           >
-            Ver todos
+            <span>Ver todos</span>
             <ChevronRightIcon size={16} />
           </Button>
         </div>
