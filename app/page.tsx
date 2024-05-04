@@ -1,4 +1,3 @@
-import Image from "next/image";
 import CategoryList from "./_components/category-list";
 import Header from "./_components/header";
 import Search from "./_components/search";
@@ -6,6 +5,7 @@ import ProductList from "./_components/product-list";
 import { Button } from "./_components/ui/button";
 import { ChevronRightIcon } from "lucide-react";
 import { db } from "./_lib/prisma";
+import PromoBanner from "./_components/promo-banner";
 
 const Home = async () => {
   //products with a discount percentage greater than zero
@@ -39,14 +39,9 @@ const Home = async () => {
       </div>
 
       <div className="px-5 pt-6">
-        <Image
+        <PromoBanner
           src="/banner-promo-pizza.png"
           alt="Até 30% de desconto em pizzas"
-          height={0}
-          width={0}
-          className="h-auto w-full object-contain"
-          sizes="100vw"
-          quality={100}
         />
       </div>
 
@@ -62,6 +57,13 @@ const Home = async () => {
           </Button>
         </div>
         <ProductList products={products} />
+      </div>
+
+      <div className="px-5 pt-6">
+        <PromoBanner
+          src="/banner-promo-burger.png"
+          alt="A partir de 17,90 em lanches"
+        />
       </div>
     </div>
   );
