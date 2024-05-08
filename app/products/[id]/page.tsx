@@ -1,7 +1,7 @@
 import { db } from "@/app/_lib/prisma";
 import { notFound } from "next/navigation";
 import ProductImage from "./_componentes/product-image";
-import ProductDetails from "./_componentes/products-details";
+import ProductDetails from "./_componentes/product-details";
 
 interface ProductsPageProps {
   params: {
@@ -20,6 +20,11 @@ const ProductsPage = async ({ params: { id } }: ProductsPageProps) => {
     },
   });
 
+  //if product not found
+  if (!product) {
+    return notFound();
+  }
+
   const juices = await db.product.findMany({
     where: {
       category: {
@@ -33,11 +38,6 @@ const ProductsPage = async ({ params: { id } }: ProductsPageProps) => {
       restaurant: true,
     },
   });
-
-  //if product not found
-  if (!product) {
-    return notFound();
-  }
 
   return (
     <div>
