@@ -69,7 +69,7 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
               className="rounded-full object-cover"
             />
           </div>
-          <h1 className="text-cl font-semibold">{restaurant.name}</h1>
+          <h1 className="text-xl font-semibold">{restaurant.name}</h1>
         </div>
 
         <div className="flex items-center gap-[3px] rounded-full bg-foreground px-2 py-[2px] text-white">
