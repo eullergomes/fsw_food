@@ -11,7 +11,9 @@ export interface CartProduct
     include: {
       restaurant: {
         select: {
+          id: true;
           deliveryFee: true;
+          deliveryTime: true;
         };
       };
     };
@@ -24,6 +26,7 @@ interface ICartContext {
   subtotalPrice: number;
   totalPrice: number;
   totalDiscount: number;
+  totalQuantity: number;
   addProductToCart: ({
     product,
     quantity,
@@ -33,7 +36,9 @@ interface ICartContext {
       include: {
         restaurant: {
           select: {
+            id: true;
             deliveryFee: true;
+            deliveryTime: true;
           };
         };
       };
@@ -44,7 +49,7 @@ interface ICartContext {
   decreaseProductQuantity: (productId: string) => void;
   increaseProductQuantity: (productId: string) => void;
   removeProductFromCart: (productId: string) => void;
-  totalQuantity: number;
+  clearCart: () => void;
 }
 
 export const CartContext = createContext<ICartContext>({
@@ -52,11 +57,12 @@ export const CartContext = createContext<ICartContext>({
   subtotalPrice: 0,
   totalPrice: 0,
   totalDiscount: 0,
+  totalQuantity: 0,
   addProductToCart: () => {},
   decreaseProductQuantity: () => {},
   increaseProductQuantity: () => {},
   removeProductFromCart: () => {},
-  totalQuantity: 0,
+  clearCart: () => {},
 });
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
@@ -84,6 +90,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       return acc + product.quantity;
     }, 0);
   }, [products]);
+
+  const clearCart = () => {
+    return setProducts([]);
+  };
 
   const decreaseProductQuantity = (productId: string) => {
     setProducts((prev) =>
@@ -124,7 +134,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       include: {
         restaurant: {
           select: {
+            id: true;
             deliveryFee: true;
+            deliveryTime: true;
           };
         };
       };
@@ -171,6 +183,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         decreaseProductQuantity,
         increaseProductQuantity,
         removeProductFromCart,
+        clearCart,
         subtotalPrice,
         totalPrice,
         totalDiscount,

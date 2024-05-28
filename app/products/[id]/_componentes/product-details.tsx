@@ -194,7 +194,7 @@ const ProductDetails = ({
           <AlertDialogFooter>
             <AlertDialogCancel>Cancelar</AlertDialogCancel>
             <AlertDialogAction onClick={() => addToCart({ emptyCart: true })}>
-              Esvaziar sacole e adicionar
+              Esvaziar sacola e adicionar
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
