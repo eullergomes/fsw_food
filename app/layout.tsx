@@ -3,12 +3,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import CartProvider from "./_context/cart";
 import AuthProvider from "./_providers/auth";
+import { Toaster } from "@/app/_components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "FSW Food",
-  description: "Projeto de delivery de comida",
+  description: "O melhor delivery de comida!",
 };
 
 export default function RootLayout({
@@ -21,6 +22,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <AuthProvider>
           <CartProvider>{children}</CartProvider>
+
+          <Toaster />
         </AuthProvider>
       </body>
     </html>
