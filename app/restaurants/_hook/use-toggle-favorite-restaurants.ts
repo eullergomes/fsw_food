@@ -1,0 +1,43 @@
+import { toggleFavoriteRestaurant } from "@/app/_actions/restaurant";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+
+interface useToggleFavoriteRestaurantProps {
+  userId?: string;
+  restaurantId: string;
+  restaurantIsFavorited?: boolean;
+}
+
+const useToggleFavoriteRestaurant = ({
+  userId,
+  restaurantId,
+  restaurantIsFavorited,
+}: useToggleFavoriteRestaurantProps) => {
+  const router = useRouter();
+
+  const handleFavoriteClick = async () => {
+    if (!userId) return;
+
+    try {
+      await toggleFavoriteRestaurant(userId, restaurantId);
+
+      toast(
+        restaurantIsFavorited
+          ? "Restaurante removido dos favoritos!"
+          : "Restaurante favoritado!",
+        {
+          action: {
+            label: "Ver favoritos",
+            onClick: () => router.push("/my-favorite-restaurants"),
+          },
+        },
+      );
+    } catch (error) {
+      toast.error("Erro ao favoritar restaurante!");
+    }
+  };
+
+  return { handleFavoriteClick };
+};
+
+export default useToggleFavoriteRestaurant;
