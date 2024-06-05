@@ -109,9 +109,12 @@ const Header = () => {
                 <Button
                   variant="ghost"
                   className="w-full justify-start space-x-3 text-sm"
+                  asChild
                 >
-                  <HeartIcon size={16} />
-                  <span className="block">Restaurantes Favoritos</span>
+                  <Link href="/my-favorite-restaurants">
+                    <HeartIcon size={16} />
+                    <span className="block">Restaurantes Favoritos</span>
+                  </Link>
                 </Button>
               </>
             )}
