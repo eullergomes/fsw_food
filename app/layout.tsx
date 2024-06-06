@@ -10,6 +10,16 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "FSW Food",
   description: "O melhor delivery de comida!",
+  authors: [{ name: "Euller Gomes" }],
+  creator: "Euller Gomes",
+  keywords: ["Delivery", "Food", "FSWFood"],
+  applicationName: "FSW Food",
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    title: "FSW Food",
+    description: "O melhor delivery de comida!",
+  },
 };
 
 export default function RootLayout({
