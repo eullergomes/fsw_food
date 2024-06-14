@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import CartProvider from "./_context/cart";
 import AuthProvider from "./_providers/auth";
 import { Toaster } from "@/app/_components/ui/sonner";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: "normal",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "FSW Food",
@@ -29,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <AuthProvider>
           <CartProvider>{children}</CartProvider>
 

@@ -133,7 +133,7 @@ const ProductDetails = ({
             >
               <ChevronLeftIcon />
             </Button>
-            <span className="w-4">{quantity}</span>
+            <span className="w-4 text-center">{quantity}</span>
             <Button size="icon" onClick={handleIncreaseQuantity}>
               <ChevronRightIcon />
             </Button>
