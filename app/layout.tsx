@@ -7,7 +7,7 @@ import { Toaster } from "@/app/_components/ui/sonner";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700", "800"],
   style: "normal",
   display: "swap",
 });
@@ -24,6 +24,17 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     title: "FSW Food",
     description: "O melhor delivery de comida!",
+    images: [
+      {
+        url: "/logo.png",
+        width: 552,
+        height: 552,
+        alt: "FSW Food Logo",
+      },
+    ],
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 

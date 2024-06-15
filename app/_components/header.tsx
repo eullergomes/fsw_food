@@ -33,11 +33,17 @@ const Header = () => {
   return (
     <header className="flex justify-between px-5 pt-6">
       <Link href="/">
-        <Image src="/logo.svg" alt="FSW Food" width={100} height={30} />
+        <Image
+          src="/logo.svg"
+          alt="FSW Food"
+          width={100}
+          height={30}
+          style={{ width: "auto", height: "auto" }}
+        />
       </Link>
 
       <Sheet>
-        <SheetTrigger>
+        <SheetTrigger asChild>
           <Button
             size="icon"
             variant="outline"
