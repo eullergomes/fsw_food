@@ -13,6 +13,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fswfood-euller-gomes-projects.vercel.app/"),
   title: "FSW Food",
   description: "O melhor delivery de comida!",
   authors: [{ name: "Euller Gomes" }],
