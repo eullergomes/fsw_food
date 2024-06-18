@@ -8,6 +8,7 @@ import { db } from "./_lib/prisma";
 import PromoBanner from "./_components/promo-banner";
 import RestaurantList from "./_components/restaurant-list";
 import Link from "next/link";
+import SearchDesk from "./_components/search-desk";
 
 const fetch = async () => {
   //products with a discount percentage greater than zero
@@ -56,15 +57,17 @@ const Home = async () => {
     <div>
       <Header />
 
-      <div className="px-5 py-6">
+      <div className="px-5 py-3 md:hidden">
         <Search />
       </div>
 
-      <div className="py-6">
+      <SearchDesk />
+
+      <div className="py-3 text-center lg:px-0">
         <CategoryList />
       </div>
 
-      <div className="px-5 pt-6">
+      <div className="px-5 pt-6 md:hidden">
         <Link href={`/categories/${pizzasCategory?.id}/products`}>
           <PromoBanner
             src="/banner-promo-pizza.png"
@@ -73,9 +76,9 @@ const Home = async () => {
         </Link>
       </div>
 
-      <div className="space-y-4 pt-6">
-        <div className="flex items-center justify-between px-5">
-          <h2 className="font-semibold">Pedidos Recomendados</h2>
+      <div className="space-y-4 pt-6 lg:px-24">
+        <div className="flex items-center justify-between px-5 lg:px-0">
+          <h2 className="font-semibold lg:px-0">Pedidos Recomendados</h2>
           <Button
             variant="ghost"
             className="h-fit p-0 text-primary hover:bg-transparent"
@@ -90,7 +93,17 @@ const Home = async () => {
         <ProductList products={products} />
       </div>
 
-      <div className="px-5 pt-6">
+      <div className="justify-center gap-4 px-5 pt-6 md:flex lg:px-24">
+        <Link
+          href={`/categories/${pizzasCategory?.id}/products`}
+          className="hidden md:block"
+        >
+          <PromoBanner
+            src="/banner-promo-pizza.png"
+            alt="Até 30% de desconto em pizzas"
+          />
+        </Link>
+
         <Link href={`/categories/${burguersCategory?.id}/products`}>
           <PromoBanner
             src="/banner-promo-burger.png"
@@ -99,8 +112,8 @@ const Home = async () => {
         </Link>
       </div>
 
-      <div className="space-y-4 pt-6">
-        <div className="flex items-center justify-between px-5">
+      <div className="space-y-4 pt-6 lg:px-24">
+        <div className="flex items-center justify-between px-5 lg:px-0">
           <h2 className="font-semibold">Restaurantes Recomendados</h2>
           <Button
             variant="ghost"

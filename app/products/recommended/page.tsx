@@ -1,5 +1,6 @@
 import Header from "@/app/_components/header";
 import ProductItem from "@/app/_components/product-item";
+import Search from "@/app/_components/search";
 import { db } from "@/app/_lib/prisma";
 
 const RecommendedProducts = async () => {
@@ -23,10 +24,10 @@ const RecommendedProducts = async () => {
 
   return (
     <>
-      <Header />
-      <div className="p-6">
+      <Header inputComponent={<Search />} />
+      <div className="p-6 lg:px-24">
         <h2 className="mb-6 text-lg font-semibold">Pedidos Recomendados</h2>
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {products.map((product) => (
             <ProductItem
               key={product.id}

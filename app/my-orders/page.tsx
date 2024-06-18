@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { db } from "../_lib/prisma";
 import Header from "../_components/header";
 import OrderItem from "./_components/order-item";
+import Search from "../_components/search";
 
 const MyOrdersPage = async () => {
   const session = await getServerSession(authOptions);
@@ -28,9 +29,9 @@ const MyOrdersPage = async () => {
 
   return (
     <>
-      <Header />
+      <Header inputComponent={<Search />} />
 
-      <div className="px-5 py-6">
+      <div className="px-5 py-6 lg:px-24">
         <h2 className="pb-6 text-lg font-semibold">Meus pedidos</h2>
 
         <div className="space-y-3">

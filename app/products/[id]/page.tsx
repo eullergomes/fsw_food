@@ -2,6 +2,8 @@ import { db } from "@/app/_lib/prisma";
 import { notFound } from "next/navigation";
 import ProductImage from "./_componentes/product-image";
 import ProductDetails from "./_componentes/product-details";
+import Header from "@/app/_components/header";
+import Search from "@/app/_components/search";
 
 interface ProductsPageProps {
   params: {
@@ -40,11 +42,15 @@ const ProductsPage = async ({ params: { id } }: ProductsPageProps) => {
   });
 
   return (
-    <div>
-      <ProductImage product={product} />
+    <>
+      <Header inputComponent={<Search />} />
 
-      <ProductDetails product={product} complementaryProducts={juices} />
-    </div>
+      <div className="flex flex-col gap-0 lg:mt-4 lg:flex-row lg:gap-6 lg:px-24">
+        <ProductImage product={product} />
+
+        <ProductDetails product={product} complementaryProducts={juices} />
+      </div>
+    </>
   );
 };
 

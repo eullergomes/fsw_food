@@ -21,8 +21,13 @@ import {
 } from "./ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Separator } from "./ui/separator";
+import { ReactNode } from "react";
 
-const Header = () => {
+interface HeaderProps {
+  inputComponent?: ReactNode;
+}
+
+const Header: React.FC<HeaderProps> = ({ inputComponent }) => {
   //get data from the user
   const { data } = useSession();
 
@@ -31,7 +36,7 @@ const Header = () => {
   const handleSignOutClick = () => signOut();
 
   return (
-    <header className="flex justify-between px-5 pt-6">
+    <header className="flex items-center justify-between border border-b px-5 py-3 lg:px-24">
       <Link href="/">
         <Image
           src="/logo.svg"
@@ -42,6 +47,9 @@ const Header = () => {
         />
       </Link>
 
+      {inputComponent && (
+        <div className="hidden w-1/2 md:block">{inputComponent}</div>
+      )}
       <Sheet>
         <SheetTrigger asChild>
           <Button

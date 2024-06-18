@@ -4,6 +4,7 @@ import { authOptions } from "../_lib/auth";
 import { notFound } from "next/navigation";
 import Header from "../_components/header";
 import RestaurantItem from "../_components/restaurant-item";
+import Search from "../_components/search";
 
 const MyFavoriteRestaurants = async () => {
   const session = await getServerSession(authOptions);
@@ -23,12 +24,10 @@ const MyFavoriteRestaurants = async () => {
 
   return (
     <>
-      <Header />
-      <div className="p-6">
-        <h2 className="mb-6 text-lg font-semibold">
-          Restaurantes Recomendados
-        </h2>
-        <div className="flex w-full flex-col gap-6">
+      <Header inputComponent={<Search />} />
+      <div className="p-6 lg:px-24">
+        <h2 className="mb-6 text-lg font-semibold">Restaurantes Favoritos</h2>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {userFavoriteRestaurants.length > 0 ? (
             userFavoriteRestaurants.map(({ restaurant }) => (
               <RestaurantItem
