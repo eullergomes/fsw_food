@@ -4,6 +4,7 @@ import ProductImage from "./_componentes/product-image";
 import ProductDetails from "./_componentes/product-details";
 import Header from "@/app/_components/header";
 import Search from "@/app/_components/search";
+import ProductList from "@/app/_components/product-list";
 
 interface ProductsPageProps {
   params: {
@@ -49,6 +50,14 @@ const ProductsPage = async ({ params: { id } }: ProductsPageProps) => {
         <ProductImage product={product} />
 
         <ProductDetails product={product} complementaryProducts={juices} />
+      </div>
+
+      <div className="hidden lg:block lg:px-24">
+        {/* JUICES */}
+        <div className="mt-6 space-y-3">
+          <h3 className="px-5 font-semibold lg:px-0">Sucos</h3>
+          <ProductList products={juices} />
+        </div>
       </div>
     </>
   );

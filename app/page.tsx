@@ -76,7 +76,7 @@ const Home = async () => {
         </Link>
       </div>
 
-      <div className="space-y-4 pt-6 lg:px-24">
+      <div className="space-y-4 pt-5 lg:px-24">
         <div className="flex items-center justify-between px-5 lg:px-0">
           <h2 className="font-semibold lg:px-0">Pedidos Recomendados</h2>
           <Button

@@ -83,9 +83,12 @@ const ProductDetails = ({
     });
   };
 
+  {
+    /* relative z-50 mt-[-1.5rem] rounded-tl-3xl rounded-tr-3xl bg-white py-5 lg:static lg:mt-0 */
+  }
   return (
     <>
-      <div className="relative z-50 mt-[-1.5rem] rounded-tl-3xl rounded-tr-3xl bg-white py-5 lg:static lg:mt-0">
+      <div className="relative z-50 mt-[-1.5rem] rounded-tl-3xl rounded-tr-3xl border-b bg-white py-5 lg:static lg:mt-0 lg:w-1/2 lg:rounded-3xl lg:border">
         {/* RESTAURANT */}
         <Link href={`/restaurants/${product.restaurant.id}`}>
           <div className="flex items-center gap-[0.375rem] px-5">
@@ -149,11 +152,13 @@ const ProductDetails = ({
         {/* DESCRIPTION */}
         <div className="mt-6 space-y-3 px-5">
           <h3 className="font-semibold">Sobre</h3>
-          <p className="text-sm text-muted-foreground">{product.description}</p>
+          <p className="text-sm text-muted-foreground lg:text-xs">
+            {product.description}
+          </p>
         </div>
 
         {/* JUICES */}
-        <div className="mt-6 space-y-3">
+        <div className="mt-6 space-y-3 md:hidden">
           <h3 className="px-5 font-semibold">Sucos</h3>
           <ProductList products={complementaryProducts} />
         </div>
