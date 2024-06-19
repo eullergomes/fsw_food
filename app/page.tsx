@@ -54,7 +54,7 @@ const Home = async () => {
   const { products, burguersCategory, pizzasCategory } = await fetch();
 
   return (
-    <div>
+    <>
       <Header />
 
       <div className="px-5 py-3 md:hidden">
@@ -128,7 +128,7 @@ const Home = async () => {
         </div>
         <RestaurantList />
       </div>
-    </div>
+    </>
   );
 };
 

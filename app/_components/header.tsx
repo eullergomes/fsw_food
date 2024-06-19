@@ -60,7 +60,7 @@ const Header: React.FC<HeaderProps> = ({ inputComponent }) => {
 
   return (
     <>
-      <header className="flex items-center justify-between border border-b px-5 py-3 lg:px-24">
+      <header className="flex items-center justify-between px-5 pb-3 pt-5 md:border md:border-b lg:px-24">
         <Link href="/">
           <Image
             src="/logo.svg"
@@ -274,7 +274,9 @@ const Header: React.FC<HeaderProps> = ({ inputComponent }) => {
         <AlertDialog open={logOutDialogOpen} onOpenChange={setLogOutDialogOpen}>
           <AlertDialogContent className="w-2/3 rounded-xl">
             <AlertDialogHeader>
-              <AlertDialogTitle>Sair da conta</AlertDialogTitle>
+              <AlertDialogTitle className="w-1/2">
+                Sair da conta
+              </AlertDialogTitle>
               <AlertDialogDescription>
                 Deseja mesmo sair da plataforma?
               </AlertDialogDescription>
