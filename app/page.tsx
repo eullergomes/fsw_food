@@ -18,7 +18,7 @@ const fetch = async () => {
         gt: 0, //products with discount (bg - bigger then)
       },
     },
-    take: 10, //limit 10 products
+    take: 15, //limit 15 products
     include: {
       //include only restaurant name
       restaurant: {

@@ -16,7 +16,7 @@ const SearchDesk = () => {
           </p>
         </div>
         <div className="flex gap-2 rounded-xl bg-white p-5">
-          <Search />
+          <Search className={"bg-yellow-400 hover:bg-yellow-300"} />
         </div>
       </div>
 

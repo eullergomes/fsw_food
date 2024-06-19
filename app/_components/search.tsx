@@ -5,12 +5,17 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { FormEventHandler, useState } from "react";
 import { useRouter } from "next/navigation";
+import { cn } from "../_lib/utils";
 
-const Search = () => {
+interface SearchProps {
+  className?: string;
+}
+
+const Search = ({ className }: SearchProps) => {
   const router = useRouter();
   const [search, setSearch] = useState("");
 
-  const handleChance = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
 
@@ -21,22 +26,15 @@ const Search = () => {
     router.push(`/restaurants?search=${search}`);
   };
 
-  // const handleKeyPress:KeyboardEventHandler<HTMLInputElement> = (e) => {
-  //   if (e.key === 'Enter') {
-  //     handleSearchSubmit(e);
-  //   }
-  // }
-
   return (
     <form className="flex w-full gap-2" onSubmit={handleSearchSubmit}>
       <Input
         placeholder="Buscar restaurantes"
         className="border-none"
-        onChange={handleChance}
-        // onKeyDown={handleKeyPress}
+        onChange={handleChange}
         value={search}
       />
-      <Button type="submit" size="icon">
+      <Button type="submit" size="icon" className={cn("", className)}>
         <SearchIcon size={20} />
       </Button>
     </form>

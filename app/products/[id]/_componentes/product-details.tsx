@@ -88,7 +88,7 @@ const ProductDetails = ({
   }
   return (
     <>
-      <div className="relative z-50 mt-[-1.5rem] rounded-tl-3xl rounded-tr-3xl border-b bg-white py-5 lg:static lg:mt-0 lg:w-1/2 lg:rounded-3xl lg:border">
+      <div className="relative z-50 mt-[-1.5rem] rounded-tl-3xl rounded-tr-3xl border-b bg-white py-5 lg:static lg:mt-0 lg:w-1/2 lg:rounded-3xl lg:border lg:py-6">
         {/* RESTAURANT */}
         <Link href={`/restaurants/${product.restaurant.id}`}>
           <div className="flex items-center gap-[0.375rem] px-5">
