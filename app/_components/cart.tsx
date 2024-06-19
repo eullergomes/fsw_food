@@ -160,7 +160,7 @@ const Cart = ({ setIsOpen }: CartProps) => {
             open={isConfirmDialogOpen}
             onOpenChange={setIsConfirmDialogOpen}
           >
-            <AlertDialogContent>
+            <AlertDialogContent className="w-2/3 rounded-xl">
               <AlertDialogHeader>
                 <AlertDialogTitle>
                   Deseja finalizar seu pedido?
@@ -179,7 +179,7 @@ const Cart = ({ setIsOpen }: CartProps) => {
                   )}
                   Finalizar
                 </AlertDialogAction>
-                <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                <AlertDialogCancel className="m-0">Cancelar</AlertDialogCancel>
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>
@@ -190,7 +190,7 @@ const Cart = ({ setIsOpen }: CartProps) => {
             open={isConfirmDialogOpen}
             onOpenChange={setIsConfirmDialogOpen}
           >
-            <AlertDialogContent>
+            <AlertDialogContent className="w-2/3 rounded-xl">
               <AlertDialogHeader>
                 <AlertDialogTitle>Faça o login da plataforma!</AlertDialogTitle>
                 <AlertDialogDescription>
@@ -216,7 +216,7 @@ const Cart = ({ setIsOpen }: CartProps) => {
                       fill="#EA1D2C"
                     />
                   </svg>
-                  <span>Github</span>
+                  Github
                 </AlertDialogAction>
 
                 {/* GOOGLE */}
